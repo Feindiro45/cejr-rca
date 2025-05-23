@@ -1,0 +1,307 @@
+    .bg-yellow-cejp {
+      background-color: #FFD700;
+    }
+.carousel-reduit {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.carousel-reduit img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-height: 100%;
+}
+
+.carousel-item {
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item {
+    height: 200px;
+  }
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.texte-slide {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1rem;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .texte-slide {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .texte-slide {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Afficher les dropdowns au survol sur desktop uniquement */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* empêche l'espace entre le lien et le menu */
+  }
+
+  .navbar .dropdown-toggle::after {
+    transform: rotate(180deg); /* facultatif : flèche vers le haut au hover */
+  }
+}
+
+/* Style personnalisé pour les dropdown-items */
+.dropdown-menu {
+  background-color: #FFD700; /* Fond jaune */
+  border: none; /* Supprimer bordure Bootstrap */
+  padding: 0; /* Supprimer padding intérieur */
+  overflow: hidden;
+}
+
+.dropdown-menu .dropdown-item {
+  background-color: #FFD700 !important;
+  border-bottom: 3px solid white !important;
+  color: black !important;
+  padding: 8px 20px;
+  font-weight: 600;
+}
+
+.dropdown-menu .dropdown-item:last-child {
+  border-bottom: none; /* Pas de trait après le dernier */
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f0c400; /* Légère variation au survol */
+  color: #000;
+}
+
+.dropdown-menu {
+  background-color: #FFD700;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Barre bleue en haut du dropdown */
+.dropdown-menu::before {
+  content: "";
+  display: block;
+  height: 7px;
+  background-color: #007BFF; /* Bleu Bootstrap */
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.image-card {
+  position: relative;
+  height: 300px;
+  background-image: url('https://source.unsplash.com/800x600/?justice');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image-card.image2 {
+  background-image: url('https://source.unsplash.com/800x600/?peace');
+}
+
+.image-card:hover {
+  transform: scale(1.01);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.text-container {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 10px;
+  width: 90%;
+  transition: all 0.3s ease;
+}
+
+.default-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: block;
+}
+
+.hover-text {
+  display: none;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.image-card:hover .default-text {
+  display: none;
+}
+
+.image-card:hover .hover-text {
+  display: block;
+}
+
+
+.title-highlight {
+  background-color: #FFD700;
+  color: #000;
+  border-radius: 0.25rem;
+  transition: color 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.title-highlight::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.title-highlight:hover {
+  color: white;
+}
+
+.title-highlight:hover::after {
+  width: 100%;
+}
+
+.no-radius {
+  border-radius: 0 !important;
+}
+
+.image-card {
+  position: relative;
+  height: 700;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  border-radius: 15px; /* par défaut */
+}
+
+.no-radius,
+.no-radius .image-card,
+.no-radius .image-card .overlay,
+.no-radius .image-card .text-container {
+  border-radius: 0 !important;
+}
+
+/* exemple d'image pour .image2 */
+.image2 {
+  background-image: url('ton-image.jpg');
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: inherit; /* prendra le border-radius de .image-card */
+  transition: background-color 0.3s ease;
+}
+
+.text-container {
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: inherit;
+}
+
+.border-dotted {
+  border: 2px solid #333;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-effect:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hover-reveal {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+}
+
+.hover-parent:hover .hover-reveal {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.hover-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+.hover-parent:hover .hover-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
